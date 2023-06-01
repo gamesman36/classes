@@ -1,16 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        Vehicle minivan = new Vehicle();
-        int range;
+        // Construct complete vehicles
+        Vehicle minivan = new Vehicle(7, 16, 21);
+        Vehicle sportscar = new Vehicle(2, 14, 12);
+        double gallons;
+        int dist = 252;
 
-        // Assign values to fields in minivan
-        minivan.passengers = 7;
-        minivan.fuelcap = 16;
-        minivan.mpg = 21;
+        gallons = minivan.fuelneeded(dist);
 
-        // Compute the range assuming a full tank of gas
-        range = minivan.fuelcap * minivan.mpg;
-        System.out.println("Minivan can carry " + minivan.passengers +
-                           " with a range of " + range);
+        System.out.println("To go " + dist + " miles minivan needs " +
+                           gallons + " gallons of fuel.");
+
+        gallons = sportscar.fuelneeded(dist);
+
+        System.out.println("To go " + dist + " miles sportscar needs " +
+                           gallons + " gallons of fuel.");
     }
 }
